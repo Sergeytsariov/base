@@ -4,7 +4,7 @@ loadkeys ru
 setfont ter-v32b
 #################################
 русский в консоле
-vim /etc/vconsole.conf
+sudo vim /etc/vconsole.conf
 **************************************
 KEYMAP=ru
 FONT=ter-v32b
