@@ -1,3 +1,3 @@
-sudo pacman -Syu openbox
+sudo pacman -Syu openbox lxappearance obconf lxappearance-obconf 
 mkdir -p ~/.config/openbox
 cp -a /etc/xdg/openbox ~/.config/
