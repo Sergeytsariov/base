@@ -18,7 +18,7 @@ sudo systemctl edit getty@tty1
 ***********************
 [Service]
 ExecStart=
-ExecStart=-/usr/bin/agetty --autologin user --noclear %I $TERM
+ExecStart=-/usr/bin/agetty --autologin nas --noclear %I $TERM
 ***********************
 
 ######################################################
