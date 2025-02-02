@@ -1,0 +1,8 @@
+/routing bgp template
+add as=64999 disabled=no name=antifilter output.network=bgp-networks .no-client-to-client-reflection=yes router-id=86.102.226.175 routing-table=main
+/routing filter rule
+add chain=discard disabled=no rule="reject;"
+/routing filter rule
+add chain=antifilter-in disabled=no rule="set gw gv0; accept;"
+/routing bgp connection
+add connect=yes disabled=no input.filter=antifilter-in listen=yes local.address=86.102.226.175 .role=ebgp multihop=yes name=antifilter.network output.filter-chain=discard remote.address=51.75.66.20/32 .as=65444 .port=179 routing-table=main templates=antifilter
