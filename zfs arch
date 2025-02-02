@@ -3,6 +3,9 @@ yay -S zfs-linux
 zfs module load
 
 sudo systemctl enable zfs-import-cache.service
+systemctl enable zfs.target 
+systemctl enable zfs-import-cache
+systemctl enable zfs-mount
 
 
 lsblk | grep 3.6T;
