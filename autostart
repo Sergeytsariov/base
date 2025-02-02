@@ -1,7 +1,7 @@
+######################################################
 cp /etc/X11/xinit/xinitrc ~/.xinitrc
 vim .xinitrc
-
-*************
+***********************
 # start some nice programs
 if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
@@ -11,10 +11,21 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 exec openbox-session
-*****************
+***********************
 
+######################################################
 sudo systemctl edit getty@tty1
-************************
+***********************
 [Service]
 ExecStart=
 ExecStart=-/usr/bin/agetty --autologin user --noclear %I $TERM
+***********************
+
+######################################################
+cp /etc/skel/.bash_profile ~/.bash_profile
+vim ~/.bash_profile
+***********************
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
+***********************
