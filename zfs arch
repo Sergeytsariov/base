@@ -1,0 +1,32 @@
+lsblk | grep 3.6T;
+sudo zpool create -f -O compression=lz4 -O recordsize=1M -O atime=off -O xattr=sa -o ashift=12 tank scsi-35000c500be80ef7e scsi-35000c500b6459866 scsi-35000c500bf17a989 scsi-35000c500b654b07b cache nvme-Patriot_M.2_P300_128GB_P300HHBB231112004569;
+lsblk | grep 931.5G;
+sudo zpool create -f -O compression=lz4 -O recordsize=1M -O atime=off -O xattr=sa -o ashift=12 yandex mirror scsi-35000c50062c0d983  scsi-35000c50062c2f5ab;
+lsblk | grep 279.4G;
+sudo zpool create -f -O compression=lz4 -O recordsize=1M -O atime=off -O xattr=sa -o ashift=12 junk mirror scsi-35000c50054e67c9f scsi-35000c50047bebd7f;
+sudo zpool status;
+sudo zfs set sharesmb=on tank;
+sudo zfs set sharesmb=on yandex;
+sudo zfs set sharesmb=on junk;
+sudo zfs get sharesmb;
+
+
+
+zfs get compressratio
+zfs get compression
+
+sudo zpool import -a
+
+sudo zpool scrub tank;
+sudo zpool scrub yandex;
+sudo zpool scrub junk;
+
+sudo chmod -R 0777 /junk;
+sudo chmod -R 0770 /tank;
+sudo chmod -R 0770 /yandex;
+sudo chgrp sambashare /junk;
+sudo chgrp sambashare /tank;
+sudo chgrp sambashare /yandex;
+sudo chown -R zanzarah:sambashare /junk;
+sudo chown -R zanzarah:sambashare /tank;
+sudo chown -R zanzarah:sambashare /yandex;
