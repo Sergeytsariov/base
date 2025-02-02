@@ -1,3 +1,5 @@
+sudo pacman -Syy terminus-font vim
+
 loadkeys ru
 setfont ter-v32b
 #################################
