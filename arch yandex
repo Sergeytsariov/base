@@ -1,1 +1,8 @@
 
+yay -S yandex-disk
+yay -S yandex-disk-indicator
+
+
+yandex-disk setup
+yandex-disk token
+yandex-disk start
