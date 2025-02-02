@@ -2,7 +2,7 @@ sudo pacman -Syy openssh
 sudo systemctl status sshd
 sudo systemctl enable sshd
 
-sudo pacman -Syy terminus-font vim openbox lxappearance obconf pcmanfm sakura tint2 openssh samba htop  bash-completion openssh lxappearance-obconf
+sudo pacman -Syy terminus-font vim lxappearance obconf pcmanfm sakura tint2 openssh samba htop  bash-completion openssh lxappearance-obconf
 
 yay -Suy obmenu-generator
 obmenu-generator -p -i
