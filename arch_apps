@@ -2,7 +2,7 @@ sudo pacman -Syy openssh
 sudo systemctl status sshd
 sudo systemctl enable sshd
 
-sudo pacman -Syy terminus-font vim openbox lxappearance lxappearance-obconf obconf pcmanfm sakura tint2 openssh samba htop  bash-completion openssh zfsutils-linux
+sudo pacman -Syy terminus-font vim openbox lxappearance lxappearance-obconf obconf pcmanfm sakura tint2 openssh samba htop  bash-completion openssh zfs-utils
 
 mkdir -p ~/.config/openbox
 cp -a /etc/xdg/openbox ~/.config/
