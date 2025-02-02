@@ -1,5 +1,6 @@
-yay -S yandex-disk
-yay -S yandex-disk-indicator
+yay -Suy yandex-browser
+yay -Suy yandex-disk
+yay -Suy yandex-disk-indicator
 
 yandex-disk setup
 yandex-disk token
