@@ -1,8 +1,50 @@
-
 yay -S yandex-disk
 yay -S yandex-disk-indicator
-
 
 yandex-disk setup
 yandex-disk token
 yandex-disk start
+
+sudo -i
+echo "deb http://repo.yandex.ru/yandex-disk/deb/ stable main" >> /etc/apt/sources.list.d/yandex-disk.list
+wget http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG -O- | apt-key add
+exit
+sudo apt update
+sudo apt install yandex-disk
+sudo su yandex
+yandex-disk setup
+yandex-disk status
+yandex-disk stop
+exit
+sudo mv /home/yandex/.config/yandex-disk /etc
+sudo nano /etc/yandex-disk/config.cfg
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+auth="/etc/yandex-disk/passwd"
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+sudo nano /etc/systemd/system/yandex-disk.service
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+[Unit]
+Description=Yandex.Disk
+Requires=network.target
+After=network.target
+
+[Service]
+Type=forking
+User=yandex
+Group=sambashare
+UMask=007
+ExecStart=/usr/bin/yandex-disk start -c /etc/yandex-disk/config.cfg
+RestartSec=1min
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+sudo systemctl --system daemon-reload
+sudo systemctl start yandex-disk.service
+sudo systemctl status yandex-disk.service
+sudo systemctl enable yandex-disk.service
+sudo rm /home/yandex/.config/autostart/Yandex.Disk.desktop
+
