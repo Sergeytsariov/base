@@ -4,8 +4,5 @@ sudo systemctl enable sshd
 
 sudo pacman -Syy terminus-font vim openbox lxappearance obconf pcmanfm sakura tint2 openssh samba htop  bash-completion openssh zfs-utils lxappearance-obconf
 
-mkdir -p ~/.config/openbox
-cp -a /etc/xdg/openbox ~/.config/
-
 yay -Suy obmenu-generator
 obmenu-generator -p -i
