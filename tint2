@@ -1,1 +1,1 @@
-sudo pacman -Syy  tint2
+sudo pacman -Suy  tint2
