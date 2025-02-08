@@ -1,11 +1,11 @@
 yay -Suy zfs-utils
 yay -S zfs-linux
+
 zfs module load
 
+sudo systemctl enable zfs.target zfs-import.target zfs-volumes.target zfs-import-scan.service zfs-volume-wait.service 
 
-sudo systemctl enable zfs.target 
-sudo systemctl enable zfs-import-cache
-sudo systemctl enable zfs-mount
+
 
 
 lsblk | grep 3.6T;
