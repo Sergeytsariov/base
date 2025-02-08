@@ -11,6 +11,19 @@ sudo zfs set mountpoint=/yandex yandex
 
 zpool upgrade -a
 
+sudo systemctl enable zfs-zed.service
+sudo systemctl start zfs-zed.service
+sudo mkdir -p /etc/zfs/zfs-list.cache
+sudo touch /etc/zfs/zfs-list.cache/junk
+sudo zfs set mountpoint=/junk junk
+sudo touch /etc/zfs/zfs-list.cache/tank
+sudo touch /etc/zfs/zfs-list.cache/yandex
+sudo zfs set mountpoint=/tank tank
+sudo zfs set mountpoint=/yandex yandex
+
+
+
+
 
 lsblk | grep 3.6T;
 sudo zpool create -f -O compression=lz4 -O recordsize=1M -O atime=off -O xattr=sa -o ashift=12 tank scsi-35000c500be80ef7e scsi-35000c500b6459866 scsi-35000c500bf17a989 scsi-35000c500b654b07b cache nvme-Patriot_M.2_P300_128GB_P300HHBB231112004569;
