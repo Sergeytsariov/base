@@ -1,10 +1,13 @@
-yay -Suy zfs-utils
 yay -S zfs-linux
+yay -Suy zfs-utils
 
 zfs module load
 
 sudo systemctl enable zfs.target zfs-import.target zfs-volumes.target zfs-import-scan.service zfs-volume-wait.service 
 
+sudo zfs set mountpoint=/junk junk
+sudo zfs set mountpoint=/tank tank
+sudo zfs set mountpoint=/yandex yandex
 
 
 
