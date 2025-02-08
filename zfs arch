@@ -9,6 +9,7 @@ sudo zfs set mountpoint=/junk junk
 sudo zfs set mountpoint=/tank tank
 sudo zfs set mountpoint=/yandex yandex
 
+zpool upgrade -a
 
 
 lsblk | grep 3.6T;
