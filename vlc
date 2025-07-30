@@ -1,1 +1,3 @@
 sudo pacman -Suy  vlc
+sudo pacman -Syu gst-libav gst-plugins-base gst-plugins-good gst-plugins-bad gst-plugins-ugly ffmpeg
+yay -S vlc-plugin-ffmpeg
